@@ -33,6 +33,7 @@ docker images
 To create the container from above image run 
 ```
 docker run -p 6100:5000 coreapp.win
+docker run -p <HOST_PORT>:<CONTAINER:PORT> IMAGE_NAME
 ```
 The above command will create container and website will start on port `localhost:6100`. Run below command to see all the running containers and some other useful commands related to containers.
 ```
