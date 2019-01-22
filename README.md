@@ -34,6 +34,7 @@ To create the container from above image run
 ```
 docker run -p 6100:5000 coreapp.win
 docker run -p <HOST_PORT>:<CONTAINER:PORT> IMAGE_NAME
+docker run -it -p 8080:5000 -v %cd%:C:/app -w "/app" microsoft/dotnet:2.2-sdk-nanoserver-1709 &REM creates volume /app and it points to current working directory in windows. Opens interactive terminal
 ```
 The above command will create container and website will start on port `localhost:6100`. Run below command to see all the running containers and some other useful commands related to containers.
 ```
