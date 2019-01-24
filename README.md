@@ -1,3 +1,25 @@
+Consider angular project & docker file content to build the image
+```
+FROM node:latest as node
+WORKDIR /ngapp
+COPY . .
+RUN npm install
+RUN npm run build  
+# RUN $(npm bin)ng build
+# RUN ./node_modules/.bin/ng build
+# RUN node ./node_modules/@angular/cli/bin/ng build
+
+FROM nginx
+COPY --from=node /ngapp/dist/* /usr/share/nginx/html/
+EXPOSE 80
+
+# build image using 
+# docker build -t imagename .
+#
+# Run the container using
+# docker run -p 8000:80 imagename
+```
+
 Lets consider aspnet core mvc project.
 <br />
 Create dockerfile inside your project root folder
